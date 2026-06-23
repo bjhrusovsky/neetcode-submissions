@@ -1,0 +1,10 @@
+from collections import defaultdict
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        complements = defaultdict(int)
+
+        for index, num in enumerate(nums):
+            complement = target - num
+            if complement in complements:
+                return [complements[complement], index]
+            complements[num] = index
